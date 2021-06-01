@@ -4,15 +4,22 @@
   "description": "Simple project containing TypeScript examples.",
   "scripts": {
     "clean": "rm -rf ./compiled_sources",
-    "compile": "tsc -t ES6 src/* --outDir ./compiled_sources",
+    "clean:all": "npm run clean && npm run test:clean",
+    "compile": "tsc",
     "build": "npm run clean && npm run compile",
     "run": "node ./compiled_sources/*",
     "start": "npm run build && npm run run",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:clean": "rm -rf ./compiled_tests",
+    "test:compile": "tsc -t ES6 src/**/*spec* --outDir ./compiled_tests",
+    "test": "npm run test:clean && npm run test:compile && jasmine ./compiled_tests/**/*"
   },
   "author": "Simão Soares",
   "license": "ISC",
   "devDependencies": {
+    "@types/jasmine": "^3.6.10",
     "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "jasmine": "^3.7.0"
   }
 }

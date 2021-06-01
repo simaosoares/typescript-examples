@@ -1,3 +1,4 @@
 .idea
 compiled_sources
 node_modules
+compiled_tests
