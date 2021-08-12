@@ -11,7 +11,7 @@
     "start": "npm run build && npm run run",
     "test:clean": "rm -rf ./compiled_tests",
     "test:compile": "tsc -t ES6 src/**/*spec* --outDir ./compiled_tests",
-    "test": "npm run test:clean && npm run test:compile && jasmine ./compiled_tests/**/*"
+    "test": "npm run test:clean && npm run test:compile && jasmine"
   },
   "author": "Simão Soares",
   "license": "ISC",

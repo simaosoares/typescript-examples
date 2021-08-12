@@ -1,0 +1,10 @@
+{
+  "spec_dir": "compiled_tests",
+  "spec_files": [
+    "**/*[sS]pec.js"
+  ],
+  "failSpecWithNoExpectations": true,
+  "stopSpecOnExpectationFailure": false,
+  "stopOnSpecFailure": false,
+  "random": false
+}
