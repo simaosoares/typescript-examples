@@ -42,3 +42,4 @@ npm test
 ## References
 
 * https://jasmine.github.io/setup/nodejs.html
+* https://github.com/inversify/InversifyJS
