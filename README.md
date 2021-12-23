@@ -39,6 +39,35 @@ Just simply hit script to run the tests.
 npm test
 ```
 
+## Sample code
+
+**Jasmine spy on modules**
+
+```typescript
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+const zlib = require("zlib");
+
+describe("SampleService", () => {
+  let gzipSpy: jasmine.Spy;
+
+  beforeEach(() => {
+    gzipSpy = spyOn(zlib, "gzip");
+  });
+
+  describe("serviceMethod()", () => {
+    it("successfully calls gzip", async (done) => {
+      function mockGzip(body, cb): unknown {
+        return cb(null, body);
+      }
+      gzipSpy.and.callFake(mockGzip);
+
+      // myService.serviceMethod();
+    });
+  });
+});
+```
+
 ## References
 
 * https://jasmine.github.io/setup/nodejs.html
