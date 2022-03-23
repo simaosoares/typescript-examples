@@ -8,7 +8,7 @@
     "compile": "tsc",
     "build": "npm run clean && npm run compile",
     "lint": "eslint --ext .ts  ./",
-    "run": "node ./compiled_sources/index.js",
+    "run": "node ./compiled_sources/src/index.js",
     "start": "npm run build && npm run run",
     "test:clean": "rm -rf ./compiled_tests",
     "test:compile": "tsc --outDir ./compiled_tests",
