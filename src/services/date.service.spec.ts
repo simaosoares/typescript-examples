@@ -32,4 +32,18 @@ describe("DateService test", () => {
       expect(dateAsYYYYmmDD).toBeUndefined();
     });
   });
+
+  describe("geDateTimeWithZone()", () => {
+    it("returns date for the given zone", function() {
+      expect(dateService.geDateTimeWithZone(date, "America/Los_Angeles")).toBe("2022-06-03T04:24:48.648-07:00");
+    });
+
+    it("returns date for the given zone without offset", function() {
+      expect(dateService.geDateTimeWithZone("2022-06-03T11:24:48.648", "America/Los_Angeles")).toBe("2022-06-03T11:24:48.648-07:00");
+    });
+
+    it("returns undefined when date is empty", function() {
+      expect(dateService.geDateTimeWithZone("", "")).toBeUndefined();
+    });
+  });
 });
